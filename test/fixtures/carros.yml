@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: 1
+  fabricante: MyString
+  modelo: MyString
+  placa: MyString
+
+two:
+  tipo: 1
+  fabricante: MyString
+  modelo: MyString
+  placa: MyString
