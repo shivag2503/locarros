@@ -5,6 +5,7 @@ class CreateCarros < ActiveRecord::Migration
       t.string :fabricante
       t.string :modelo
       t.string :placa
+      t.integer :usuario_id
 
       t.timestamps null: false
     end
