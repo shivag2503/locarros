@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# interface Admin
+gem 'activeadmin', '~> 1.0.0.pre1'
+# active Admin integrations
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
