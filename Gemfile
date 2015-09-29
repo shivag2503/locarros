@@ -7,6 +7,7 @@ gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
+gem 'materialize-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -52,4 +53,3 @@ group :development, :test do
   # Popula a base de desenvolvimento
   gem 'faker'
 end
-
