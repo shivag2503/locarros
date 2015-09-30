@@ -7,20 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-departamentos = [ "Engenharia", "Marketing", "Produtos", "Operações", "Comercial", "Corporativo", "RH", "Jurídico", "Contabilidade", "Financeiro", "Suporte" ]
-fabricante_carros = [ "Fiat", "Ford", "GM", "VW", "Renault", "Pegeut", "Nissan"]
-usuarios = (1..1000).to_a
+departments = [ "Engenharia", "Marketing", "Produtos", "Operações", "Comercial", "Corporativo", "RH", "Jurídico", "Contabilidade", "Financeiro", "Suporte" ]
+cars_manufacturer = [ "Fiat", "Ford", "GM", "VW", "Renault", "Pegeut", "Nissan"]
+users = (1..1000).to_a
 
-def criar_placa
+def create_plaque
   letras = (0...3).map { ('A'..'Z').to_a.sample }.join
   numeros =  (0...4).map { (0..9).to_a.sample }.join
   return "#{letras} #{numeros}"
 end
 
 1_000.times {
-  Usuario.create( nome: Faker::Name.first_name, sobrenome: Faker::Name.last_name, departamento: departamentos.sample, celular: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email)
+  User.create( name: Faker::Name.first_name, last_name: Faker::Name.last_name, department: departments.sample, phone: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email)
 }
 
 1_400.times {
-  Carro.create( tipo: (1..2).to_a.sample, fabricante: fabricante_carros.sample, modelo: Faker::Lorem.word, placa: criar_placa, usuario_id: usuarios.sample)
+  Car.create( type: (1..2).to_a.sample, manufacturer: cars_manufacturer.sample, model: Faker::Lorem.word, plaque: criar_placa, user_id: users.sample)
 }
