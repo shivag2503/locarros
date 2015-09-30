@@ -11,16 +11,18 @@ departments = [ "Engenharia", "Marketing", "Produtos", "Operações", "Comercial
 cars_manufacturer = [ "Fiat", "Ford", "GM", "VW", "Renault", "Pegeut", "Nissan"]
 users = (1..1000).to_a
 
-def create_plaque
-  letras = (0...3).map { ('A'..'Z').to_a.sample }.join
-  numeros =  (0...4).map { (0..9).to_a.sample }.join
-  return "#{letras} #{numeros}"
+def create_license
+  letters = (0...3).map { ('A'..'Z').to_a.sample }.join
+  numbers =  (0...4).map { (0..9).to_a.sample }.join
+  return "#{letters} #{numbers}"
 end
 
-1_000.times {
-  User.create( name: Faker::Name.first_name, last_name: Faker::Name.last_name, department: departments.sample, phone: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email)
-}
+ActiveRecord::Base.transaction do
+  1_000.times {
+    User.create( name: Faker::Name.first_name, surname: Faker::Name.last_name, department: departments.sample, cellphone: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email, phone_branch: Faker::PhoneNumber.extension)
+  }
 
-1_400.times {
-  Car.create( type: (1..2).to_a.sample, manufacturer: cars_manufacturer.sample, model: Faker::Lorem.word, plaque: criar_placa, user_id: users.sample)
-}
+  1_400.times {
+    Car.create!( type: (1..2).to_a.sample, manufacturer: cars_manufacturer.sample, model: Faker::Lorem.word, license: create_license, color: Faker::Commerce.color, user_id: users.sample)
+  }
+end

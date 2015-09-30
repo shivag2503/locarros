@@ -1,11 +1,12 @@
-class CreateUsuarios < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name
-      t.string :last_name
+      t.string :surname
       t.string :department
       t.string :email
-      t.string :phone
+      t.string :cellphone
+      t.string :phone_branch
 
       t.timestamps null: false
     end
