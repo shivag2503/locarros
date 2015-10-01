@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title>Locarros</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="red darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Locarros</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Perfil</a></li>
+      </ul>
 
-<%= yield %>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Perfil</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
+  <div class="container">
+    <div class="section">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer class="page-footer red accent-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Locarros</h5>
+          <p class="grey-text text-lighten-4">Um sistema simples para o cadastro e controle de carros em estacionamentos</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Feito por <a class="red-text text-lighten-1" href="http://kemelzaidan.com.br">Kemel Zaidan</a> e <a class="red-text text-lighten-1" href="http://kemelzaidan.com.br">Eden Pedreira</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
