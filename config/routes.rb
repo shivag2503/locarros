@@ -56,4 +56,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'cars#index'
+  get 'new' => 'cars#new'
+  get 'show' => 'cars#show'
+  post 'create' => 'cars#create'
 end

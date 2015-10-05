@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col s12 m9">
+    <h6>Listagem de todos os carros:</h6>
+    <table class="highlight responsive-table">
+      <thead>
+        <tr>
+          <th>Dono</th>
+          <th>Modelo</th>
+          <th>Cor</th>
+          <th>Placa</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @cars.each do |c| %>
+        <tr>
+          <td><%= c.user.name %> <%= c.user.surname %></td>
+          <td><%= c.model.capitalize %><br>
+              <small><%= c.manufacturer %></small></td>
+          <td><%= c.color %></td>
+          <td><%= c.license %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

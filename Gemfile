@@ -8,7 +8,7 @@ gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 0.97.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

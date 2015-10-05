@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12 m9">
+    <ul class="collapsible" data-collapsible="expandable">
+      <% @cars.each do |car| %>
+        <li>
+          <div class="collapsible-header">
+            <strong><%= car.model.upcase %></strong> <em><%= car.color.capitalize %></em>
+          </div>
+          <div class="collapsible-body">
+            <p>
+              Fabricante: <%= car.manufacturer %><br>
+              Placa: <%= car.license %><br>
+              Cadastrado em: <%= car.created_at.to_s(:short) %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <div class="right-align">
+      <a href="/new" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+  </div>
+</div>
